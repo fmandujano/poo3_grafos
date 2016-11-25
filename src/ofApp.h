@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxGui.h"
 
 class ofApp : public ofBaseApp{
 
@@ -20,5 +21,28 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+
+		enum EstadoApp
+		{
+			esperando,
+			poniendoNodo, 
+			poniendoAristaDesde,
+			poniendoAristaHacia,
+			guardando,
+		} estado;
+
+		ofxPanel gui;
+		ofxButton botonNodos;
+		ofxButton botonAristas;
+		ofxButton botonGuradar;
+
+		void AgregarNodo();
+		void AgregarArista();
+
+		void PonerNodo(float x, float y);
+		void intentarNodoIni(float x, float y);
+		void intentarTocarNodo(float x, float y);
+		void CambiarEstado(EstadoApp nuevo);
 		
+		void Hanoi(int numDiscos, int origen, int destino, int libre);
 };

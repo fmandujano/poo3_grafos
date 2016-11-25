@@ -10,6 +10,8 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+*.opendb
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -23,7 +25,10 @@ bld/
 
 # ignorar el contenido de bin pero no de la subcarpeta data
 bin/*.exe
-
+bin/*.exp
+bin/*.ilk
+bin/*.lib
+bin/*.pdb
 
 # Visual Studio 2015 cache/options directory
 .vs/
